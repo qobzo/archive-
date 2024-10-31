@@ -1,14 +1,11 @@
 # Rewrote it Oct. 30th, 2024
-def errormsg():
-    print("Type in a number between 0-100.")
-
 def define(a, b):
     while True:
         try:
             globals()[a] = b
             break
         except ValueError:
-            errormsg
+            print("Type in a number between 0-100.")
 
 while True:
     define("location", input("Where do you live?\n"))
