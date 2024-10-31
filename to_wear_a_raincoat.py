@@ -1,27 +1,27 @@
+# Rewrote it Oct. 30th, 2024
 def errormsg():
     print("Type in a number (ex. 1, 50, 100).")
 
-while True:
-    rainchance = input("What % likelihood is there of rain?\n")
-    try:
-        rainchance = int(rainchance)
-        break
-    except ValueError:
-        errormsg()
+def define(a, b):
+    while True:
+        try:
+            globals()[a] = b
+            break
+        except ValueError:
+            errormsg
 
 while True:
-    location = input("Where do you live?")
-    try:
-        location = str(location)
-        break
-    except ValueError:
-        errormsg()
-
-while True:
-    if location == "portland":
-        print("Portland?! You better bring that raincoat!")
-    elif rainchance > 50:
-        print("I'd wear a raincoat")
-    else:
-        print("Leave that raincoat at home.")
-    break
+    define("location", input("Where do you live?\n"))
+    if location.lower() == "portland":
+        location = input("Portland, OR?\n").lower()
+        if location.startswith(("y", "or")) or location == "portland, or":
+            print("Portland, OR?! You better bring that raincoat!")
+            quit()
+        else:
+            define("chance", int(input("What % likelihood is there of rain?\n")))
+            if chance > 50:
+                print("I'd wear a raincoat")
+                break
+            else: 
+                print("Leave that raincoat at home.")
+                break
