@@ -1,1 +1,1 @@
-print(sum(range(6)))
+print(sum(range(int(input("input number\n")))))
