@@ -1,6 +1,6 @@
 # Rewrote it Oct. 30th, 2024
 def errormsg():
-    print("Type in a number (ex. 1, 50, 100).")
+    print("Type in a number between 0-100.")
 
 def define(a, b):
     while True:
