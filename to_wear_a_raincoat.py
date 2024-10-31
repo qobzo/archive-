@@ -1,24 +1,28 @@
-def define(a, b):
-    while True:
-        try:
-            globals()[a] = b
-            break
-        except ValueError:
-            print("Type in a number (ex. 1, 50, 100).")
+while True:
+    location = input("Where do you live?\n")
+    if location.lower() == "portland":
+        while True:
+            location = input("Portland, OR?\n")
+            if location.startswith(("y", "or", "portland, or")):
+                location = "portland, or"
+                break
+            elif location.startswith("n"):
+                break
+    break
 
 while True:
-    define("location", input("Where do you live?\n"))
-    if location.lower() == "portland":
-        location = input("Portland, OR?\n").lower()
-    if location.startswith(("y", "or")) or location == "portland, or":
-        location = "portland, or"
-        print("Portland, OR?! You better bring that raincoat!")
+    if location == "portland, or":
+        print("Portland?! You better bring a raincoat!")
         quit()
     else:
-        define("chance", int(input("What % likelihood is there of rain?\n")))
-        if chance > 50:
-            print("I'd wear a raincoat")
-            break
-        else: 
-            print("Leave that raincoat at home.")
-            break
+        chance = input("What % likelihood is there of rain?\n")
+        try:
+            chance = int(chance)
+            if chance > 50:
+                print("I'd wear a raincoat")
+                break
+            else:
+                print("Leave that raincoat at home.")
+                break
+        except ValueError:
+            print("Type in a number from 1-100.")
