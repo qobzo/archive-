@@ -1,4 +1,5 @@
-def my_printer(color):
-    return "a " + color + " 3D printed shape"
+def my_printer(color, shape):
+    return color + " " + shape
 
-print(my_printer("red"))
+shape_one = my_printer("pink", "elephant")
+print(shape_one)
