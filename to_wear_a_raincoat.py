@@ -9,7 +9,7 @@ while True:
     if location == "portland":
         while True:
             location = input("Portland, OR?\n")
-            if location == "portland, or" or location.startswith(("y", "or", "portland, o")):
+            if location.startswith(("y", "or", "portland, o")):
                 location = "portland, or"
                 break
             elif location.startswith("n"):
